@@ -13,6 +13,7 @@ interface Product {
   title: string
   category: string
   image: string
+  images?: string[]  // Optional fallback
   description: string
   features: string[]
   safety: string[]
@@ -24,14 +25,10 @@ interface ProductDetailPageProps {
 }
 
 export default function ProductDetailPage({ product }: ProductDetailPageProps) {
+    const galleryImages = product.images && product.images.length > 0 ? product.images : [product.image]
+
   const [selectedImage, setSelectedImage] = useState(0)
 
-  const additionalImages = [
-    product.image,
-    "/placeholder.svg?height=400&width=600",
-    "/placeholder.svg?height=400&width=600",
-    "/placeholder.svg?height=400&width=600",
-  ]
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-stone-50 to-white">
@@ -58,12 +55,12 @@ export default function ProductDetailPage({ product }: ProductDetailPageProps) {
           {/* Product Images */}
           <div className="space-y-4">
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-stone-100 to-stone-200 shadow-2xl">
-              <Image
-                src={additionalImages[selectedImage] || "/placeholder.svg"}
-                alt={product.title}
-                fill
-                className="object-cover"
-              />
+                <Image
+          src={galleryImages[selectedImage]}
+          alt={product.title}
+          fill
+          className="object-cover"
+        />
               <div className="absolute top-4 left-4">
                 <Badge className="bg-yellow-400 text-slate-900 font-semibold">Available Now</Badge>
               </div>
@@ -71,24 +68,17 @@ export default function ProductDetailPage({ product }: ProductDetailPageProps) {
 
             {/* Thumbnail Gallery */}
             <div className="grid grid-cols-4 gap-3">
-              {additionalImages.map((image, index) => (
-                <button
-                  key={index}
-                  onClick={() => setSelectedImage(index)}
-                  className={`relative aspect-square rounded-lg overflow-hidden transition-all duration-300 ${
-                    selectedImage === index
-                      ? "ring-4 ring-blue-500 scale-105"
-                      : "hover:scale-105 opacity-70 hover:opacity-100"
-                  }`}
-                >
-                  <Image
-                    src={image || "/placeholder.svg"}
-                    alt={`${product.title} view ${index + 1}`}
-                    fill
-                    className="object-cover"
-                  />
-                </button>
-              ))}
+              {galleryImages.map((img, idx) => (
+          <button
+            key={idx}
+            onClick={() => setSelectedImage(idx)}
+            className={`aspect-square relative rounded-md overflow-hidden ${
+              selectedImage === idx ? "ring-4 ring-blue-500 scale-105" : "hover:scale-105 opacity-70 hover:opacity-100"
+            } transition-all duration-300`}
+          >
+            <Image src={img} alt={`Thumbnail ${idx}`} fill className="object-cover" />
+          </button>
+        ))}
             </div>
           </div>
 

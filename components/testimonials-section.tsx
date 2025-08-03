@@ -7,41 +7,39 @@ import { Star, Quote, ChevronLeft, ChevronRight } from "lucide-react"
 
 const testimonials = [
   {
-    name: "Henry Grayston",
-    role: "Project Manager",
+    name: "Michael Friedrich",
+    role: "Canberra Mini Diggers",
     rating: 5,
-    text: "Delivered to site in the last minute, great digger and great company to deal with. Thanks.",
-    avatar: "/placeholder.svg?height=60&width=60",
+    avatar: "/images/Canberra Mini Diggers.png", // Rename & place in public/testimonials
+    text:
+      "Renting through Kelton Rentals has provided us with the advantage of having a larger variety of fleet without the associated costs of insurance, finance, maintenance and storage. For us this is just smart business, for our clients; we are able to offer a larger range of specialised services.",
   },
   {
-    name: "Jayden Burleigh",
-    role: "Site Supervisor",
+    name: "Pete",
+    role: "Horton Constructions & Consulting",
     rating: 5,
-    text: "Amazing machinery and lovely fast delivery on the little machines.",
-    avatar: "/placeholder.svg?height=60&width=60",
+    avatar: "/images/Canberra Mini Diggers.png", // Rename & place in public/testimonials
+    text:
+      "I have engaged Kelton’s for the hire of plant and equipment, and their service is second to none! Staff have always been very helpful, friendly and informative. Free delivery is included with hire and is always delivered on time, even on very short notice. I have never had any issues whatsoever with their machinery. I would have no hesitation in recommending them for all your hire requirements.",
   },
   {
-    name: "Max Davenport",
-    role: "Contractor",
+    name: "Max Rosin",
+    role: "Rosin Contracting",
     rating: 5,
-    text: "Great machines. Good people. Fast delivery times.",
-    avatar: "/placeholder.svg?height=60&width=60",
+    avatar: "/images/Rosin Contracting.png",
+    text:
+      "On behalf of Rosin Contracting, I would like to thank Kelton Rentals for continuing to be an excellent business partner with quality machines and customer service excellence. Nothing is too much trouble for Kelton and we very much appreciate the ongoing support they provide to Rosin Contracting. I highly recommend Kelton Rentals — they've worked with us through difficult past few years and again during the challenging wet months we have seen in 2022.",
   },
   {
-    name: "Ethan Sessolo",
-    role: "Builder",
+    name: "PD Concreting",
+    role: "",
     rating: 5,
-    text: "Great machines, good people. Good and fast delivery times.",
-    avatar: "/placeholder.svg?height=60&width=60",
-  },
-  {
-    name: "Lewis Dunlop",
-    role: "Site Manager",
-    rating: 5,
-    text: "Great Company, impeccably clean and well serviced machines. Great people to deal with.",
-    avatar: "/placeholder.svg?height=60&width=60",
+    avatar: "/images/PD Concreting.png",
+    text:
+      "The team at Kelton Rentals truly goes above and beyond, they are amazing to work with! Regardless of our request, the team responded immediately and professionally. Kelton's equipment is good quality, works efficiently, is well maintained and is provided at a competitive price. Thanks for the help in making our projects successful.",
   },
 ]
+
 
 export default function TestimonialsSection() {
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -68,12 +66,12 @@ export default function TestimonialsSection() {
   }
 
   return (
-    <section className="py-10 relative overflow-hidden bg-yellow-300">
+    <section className="py-10 relative overflow-hidden bg-secondary">
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-blue-700 mb-6">What Our Customers Say</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">What Our Customers Say</h2>
 
           {/* Google Reviews Badge */}
           <div className="inline-flex items-center bg-white rounded-full shadow-lg px-6 py-3 ">
@@ -83,19 +81,19 @@ export default function TestimonialsSection() {
                 <span className="text-2xl font-bold text-slate-900 mr-2">5.0</span>
                 <div className="flex">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                    <Star key={i} className="w-5 h-5 fill-secondary text-secondary" />
                   ))}
                 </div>
               </div>
             </div>
-            <Button size="sm" className="bg-blue-600 hover:bg-blue-700 text-white rounded-full">
+            <Button size="sm" className="bg-primary hover:bg-blue-700 text-white rounded-full">
               Review us on Google
             </Button>
           </div>
         </div>
 
         {/* Testimonials Carousel */}
-        <div className="relative max-w-6xl mx-auto bg-yellow-300 py-10">
+        <div className="relative max-w-6xl mx-auto bg-secondary py-10">
           <div className="overflow-hidden">
             <div
               className="flex transition-transform duration-500 ease-in-out"
@@ -109,7 +107,7 @@ export default function TestimonialsSection() {
                         {/* Avatar */}
                         <div className="flex-shrink-0">
                           <div
-                            className="w-20 h-20 rounded-full bg-cover bg-center border-4 border-yellow-400"
+                            className="w-24 h-24 rounded-full bg-cover bg-center  border-primary"
                             style={{ backgroundImage: `url('${testimonial.avatar}')` }}
                           />
                         </div>
@@ -117,12 +115,12 @@ export default function TestimonialsSection() {
                         {/* Content */}
                         <div className="flex-1 text-center md:text-left">
                           {/* Quote Icon */}
-                          <Quote className="w-8 h-8 text-yellow-400 mb-4 mx-auto md:mx-0" />
+                          <Quote className="w-8 h-8 text-primary mb-4 mx-auto md:mx-0" />
 
                           {/* Rating */}
                           <div className="flex justify-center md:justify-start mb-4">
                             {[...Array(testimonial.rating)].map((_, i) => (
-                              <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                              <Star key={i} className="w-5 h-5 fill-secondary text-secondary" />
                             ))}
                           </div>
 
@@ -180,3 +178,8 @@ export default function TestimonialsSection() {
     </section>
   )
 }
+
+
+
+
+

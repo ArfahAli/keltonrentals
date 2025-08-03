@@ -130,7 +130,7 @@ export const Highlight = ({
         display: "inline",
       }}
       className={cn(
-        `relative inline-block rounded-lg bg-yellow-300 px-1 pb-1 dark:from-indigo-500 dark:to-purple-500 pl-2 text-yellow-900 dark:text-white`,
+        `relative inline-block rounded-lg bg-secondary px-1 pb-1 dark:from-indigo-500 dark:to-purple-500 pl-2 text-yellow-900 dark:text-white`,
         className,
       )}
     >

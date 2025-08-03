@@ -84,7 +84,7 @@ export default function EquipmentSection() {
   const [hoveredCard, setHoveredCard] = useState<string | null>(null)
 
   return (
-    <section className="py-20 bg-gradient-to-b from-stone-100 to-stone-50 relative overflow-hidden">
+    <section id="equipments" className="py-20 bg-gradient-to-b from-stone-100 to-stone-50 relative overflow-hidden">
       {/* Background texture */}
       <div className="absolute inset-0 opacity-5">
         <div
@@ -102,9 +102,9 @@ export default function EquipmentSection() {
             <Wrench className="w-4 h-4 mr-2" />
             Equipment Rental
           </div>
-         
+
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-            <span className="block">Looking for  <ColourfulText text="reliable" /> gear to</span>
+            <span className="block">Looking for reliable gear to</span>
             <span className="block text-blue-700  text-3xl md:text-4xl mt-2">get the job done?</span>
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
@@ -114,39 +114,44 @@ export default function EquipmentSection() {
         </div>
 
         {/* Equipment Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 mb-40">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-6">
           {equipmentCategories.map((category) => (
-            <div
-              key={category.id}
-              className="group/card max-w-sm w-full cursor-pointer overflow-hidden relative h-96 rounded-md shadow-xl bg-cover bg-center flex flex-col justify-between p-4 "
-              style={{ backgroundImage: `url('${category.image}')` }}
-              onMouseEnter={() => setHoveredCard(category.id)}
-              onMouseLeave={() => setHoveredCard(null)}
-            >
-                        <div className="absolute inset-0 bg-slate-800/50" />
+            <Link href={`/equipment/${category.id}`} key={category.id} className="block group/card">
 
-              <div className="absolute w-full h-full top-0 left-0 transition duration-300 group-hover/card:bg-black opacity-60 z-0"></div>
-              <div className="flex flex-col h-full justify-between z-10 relative">
-                <div className="flex flex-row items-center space-x-4">
-                  
-                  <div className="text-white">
-                    <p className="font-bold text-base text-xl">{category.name}</p>
-                    <p className="text-sm text-gray-300">{category.description}</p>
+              <div
+                key={category.id}
+                className="group/card w-full cursor-pointer overflow-hidden relative h-96 rounded-md shadow-xl bg-cover bg-center flex flex-col justify-between p-4"
+                style={{ backgroundImage: `url('${category.image}')` }}
+                onMouseEnter={() => setHoveredCard(category.id)}
+                onMouseLeave={() => setHoveredCard(null)}
+              >
+
+                <div className="absolute inset-0 bg-slate-800/50" />
+
+                <div className="absolute w-full h-full top-0 left-0 transition duration-300 group-hover/card:bg-black opacity-60 z-0"></div>
+                <div className="flex flex-col h-full justify-between z-10 relative">
+                  <div className="flex flex-row items-center space-x-4">
+
+                    <div className="text-white">
+                      <p className="font-bold text-base text-xl">{category.name}</p>
+                      <p className="text-sm text-gray-300">{category.description}</p>
+                    </div>
+                  </div>
+                  <div>
+                    <Link href={`/equipment/${category.id}`}>
+                      <Button
+                        variant="ghost"
+                        className="w-full justify-between text-white hover:bg-blue-50 hover:text-blue-700 transition-colors"
+                      >
+                        View Details
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </Button>
+                    </Link>
                   </div>
                 </div>
-                <div>
-                  <Link href={`/equipment/${category.id}`}>
-                    <Button
-                      variant="ghost"
-                      className="w-full justify-between text-white hover:bg-blue-50 hover:text-blue-700 transition-colors"
-                    >
-                      View Details
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </Button>
-                  </Link>
-                </div>
               </div>
-            </div>
+            </Link>
+
           ))}
         </div>
 
@@ -156,19 +161,25 @@ export default function EquipmentSection() {
             Let's get your project off the ground — the right way!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                            <Link href="#equipments" scroll={true}>
+
             <Button
               size="lg"
-              className="bg-blue-700 hover:bg-blue-800 text-white font-bold px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              className="bg-blue-700 hover:bg-blue-800 text-white font-bold px-8 py-4 rounded-full shadow-lg hover:shadow-xl "
             >
               View Full Range
             </Button>
+                            </Link>
+                            <Link href="#quote" scroll={true}>
+
             <Button
               size="lg"
               variant="outline"
-              className="border-2 border-yellow-400 text-yellow-600 hover:bg-yellow-400 hover:text-slate-900 font-bold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 bg-transparent"
+              className="hover:border-2 border-secondary text-black bg-secondary hover:text-slate-900 font-bold px-8 py-4 rounded-full hover:bg-transparent cursor-pointer"
             >
               Get Custom Quote
             </Button>
+            </Link>
           </div>
         </div>
       </div>

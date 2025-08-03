@@ -27,7 +27,9 @@ export default function Header() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center justify-center">
+          <Image src="/images/Logo-1.png" alt="Kelton Rentals" width={160} height={50} className="h-10 w-auto" />
+
             <Image src="/images/kelton-logo.png" alt="Kelton Rentals" width={160} height={50} className="h-10 w-auto" />
           </Link>
 
@@ -35,7 +37,7 @@ export default function Header() {
           <nav className="hidden lg:flex items-center space-x-8">
             <Link
               href="/equipment"
-              className={`font-medium transition-colors hover:text-yellow-400 ${
+              className={`font-medium transition-colors hover:text-secondary ${
                 isScrolled ? "text-slate-700" : "text-white"
               }`}
             >
@@ -43,7 +45,7 @@ export default function Header() {
             </Link>
             <Link
               href="/attachments"
-              className={`font-medium transition-colors hover:text-yellow-400 ${
+              className={`font-medium transition-colors hover:text-secondary ${
                 isScrolled ? "text-slate-700" : "text-white"
               }`}
             >
@@ -51,7 +53,7 @@ export default function Header() {
             </Link>
             <Link
               href="/about"
-              className={`font-medium transition-colors hover:text-yellow-400 ${
+              className={`font-medium transition-colors hover:text-secondary ${
                 isScrolled ? "text-slate-700" : "text-white"
               }`}
             >
@@ -59,7 +61,7 @@ export default function Header() {
             </Link>
             <Link
               href="/contact"
-              className={`font-medium transition-colors hover:text-yellow-400 ${
+              className={`font-medium transition-colors hover:text-secondary ${
                 isScrolled ? "text-slate-700" : "text-white"
               }`}
             >
@@ -73,10 +75,13 @@ export default function Header() {
               <div className={`text-lg font-bold ${isScrolled ? "text-blue-700" : "text-white"}`}>02 6213 8111</div>
               <div className={`text-sm ${isScrolled ? "text-slate-600" : "text-white/80"}`}>rentals@kelton.biz</div>
             </div>
-            <Button className="bg-yellow-300 hover:bg-yellow-500 text-slate-900 font-semibold px-6 py-2 rounded-md">
-              <Phone className="w-4 h-4 mr-2" />
-              Get Quote
-            </Button>
+          <Link href="#quote" scroll={true}>
+  <Button className="bg-secondary hover:bg-primary hover:text-white text-slate-900 font-semibold px-6 py-2 rounded-md">
+    <Phone className="w-4 h-4 mr-2" />
+    Get Quote
+  </Button>
+</Link>
+
           </div>
 
           {/* Mobile Menu Button */}
@@ -125,9 +130,12 @@ export default function Header() {
               <div className="px-4 pt-4 border-t border-stone-200">
                 <div className="text-lg font-bold text-blue-700">02 6213 8111</div>
                 <div className="text-sm text-slate-600 mb-3">rentals@kelton.biz</div>
-                <Button className="w-full bg-yellow-400 hover:bg-yellow-500 text-slate-900 font-semibold">
-                  Get Quote
-                </Button>
+                <Link href="#quote" scroll={true}>
+  <Button className="w-full bg-secondary hover:bg-primary text-slate-900 font-semibold">
+    Get Quote
+  </Button>
+</Link>
+
               </div>
             </nav>
           </div>

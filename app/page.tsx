@@ -6,20 +6,23 @@ import TestimonialsSection from "@/components/testimonials-section"
 import Footer from "@/components/footer"
 import { LampDemo } from "@/components/Lamp"
 import { HeroHighlightDemo } from "@/components/Highlight"
+import Ad from "@/components/Ad"
+import TeamSection from "@/components/team-section"
+import CTASection from "@/components/cta-section"
+import QuoteSection from "@/components/quote-section"
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-amber-50 to-stone-100">
-      
+
       <Header />
-       {/* <LampDemo /> */}
       <HeroSection />
-       <AboutSection />
-             <EquipmentSection />
-
+      <AboutSection />
+      <EquipmentSection />
+      <Ad />
       <TestimonialsSection />
-
-            <HeroHighlightDemo />
-
+      <QuoteSection />
+      {/* <TeamSection /> */}
+      <CTASection />
       <Footer />
     </div>
   )

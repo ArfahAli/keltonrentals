@@ -5,7 +5,12 @@ const equipmentData = {
   "site-dumpers": {
     title: "3.0T Dumper",
     category: "Site Dumpers",
-    image: "/placeholder.svg?height=500&width=700&text=3.0T+Dumper",
+    image: "/images/site-dumpster-1.png",
+      images: [
+    "/images/site-dumpster-1.png",
+    "/images/site-dumpster-2.png",
+    "/images/site-dumpster-3.png",
+  ],
     description: "Versatile and reliable 3-tonne site dumper perfect for material transport on construction sites.",
     features: [
       "180 Degree Swivel Bin",
@@ -42,7 +47,12 @@ const equipmentData = {
   excavators: {
     title: "3T Excavator",
     category: "Excavators",
-    image: "/placeholder.svg?height=500&width=700&text=3T+Excavator",
+    image: "/product-2.png",
+       images: [
+    "/images/product-2.png",
+    "/images/product-2.png",
+    "/images/product-2.png",
+  ],
     description: "Compact and powerful 3-tonne excavator ideal for tight spaces and precision digging work.",
     features: [
       "Zero Tail Swing Design",
@@ -77,6 +87,11 @@ const equipmentData = {
     title: "Double Drum Roller",
     category: "Rollers",
     image: "/placeholder.svg?height=500&width=700&text=Double+Drum+Roller",
+       images: [
+    "/images/site-dumpster-1.png",
+    "/images/site-dumpster-2.png",
+    "/images/site-dumpster-3.png",
+  ],
     description: "Heavy-duty double drum roller for superior compaction of asphalt and soil surfaces.",
     features: [
       "Dual Frequency Vibration",
@@ -111,6 +126,11 @@ const equipmentData = {
     title: "Mini Track Loader",
     category: "Mini Loaders",
     image: "/placeholder.svg?height=500&width=700&text=Mini+Track+Loader",
+       images: [
+    "/images/site-dumpster-1.png",
+    "/images/site-dumpster-2.png",
+    "/images/site-dumpster-3.png",
+  ],
     description: "Compact track loader perfect for landscaping and tight access construction work.",
     features: [
       "Rubber Track System",
@@ -145,6 +165,11 @@ const equipmentData = {
     title: "Skid Steer Track Loader",
     category: "Skid Steer Track Loaders",
     image: "/placeholder.svg?height=500&width=700&text=Skid+Steer+Track+Loader",
+       images: [
+    "/images/site-dumpster-1.png",
+    "/images/site-dumpster-2.png",
+    "/images/site-dumpster-3.png",
+  ],
     description: "Versatile tracked skid steer loader for all-terrain material handling and construction tasks.",
     features: [
       "Rubber Track System",
@@ -179,6 +204,11 @@ const equipmentData = {
     title: "10T Tipper Truck",
     category: "Tippers",
     image: "/placeholder.svg?height=500&width=700&text=10T+Tipper+Truck",
+       images: [
+    "/images/site-dumpster-1.png",
+    "/images/site-dumpster-2.png",
+    "/images/site-dumpster-3.png",
+  ],
     description: "Heavy-duty tipper truck for efficient material transport and site delivery services.",
     features: [
       "Hydraulic Tipping Body",
@@ -213,6 +243,11 @@ const equipmentData = {
     title: "Water Cart 10,000L",
     category: "Water Carts",
     image: "/placeholder.svg?height=500&width=700&text=Water+Cart+10000L",
+       images: [
+    "/images/site-dumpster-1.png",
+    "/images/site-dumpster-2.png",
+    "/images/site-dumpster-3.png",
+  ],
     description: "Large capacity water cart for dust suppression and site watering applications.",
     features: [
       "10,000L Capacity Tank",
@@ -247,6 +282,11 @@ const equipmentData = {
     title: "Plate Compactor",
     category: "Compaction",
     image: "/placeholder.svg?height=500&width=700&text=Plate+Compactor",
+       images: [
+    "/images/site-dumpster-1.png",
+    "/images/site-dumpster-2.png",
+    "/images/site-dumpster-3.png",
+  ],
     description: "Heavy-duty plate compactor for soil and asphalt compaction in confined spaces.",
     features: [
       "Reversible Operation",
@@ -281,6 +321,11 @@ const equipmentData = {
     title: "Equipment Trailer",
     category: "Trailers",
     image: "/placeholder.svg?height=500&width=700&text=Equipment+Trailer",
+       images: [
+    "/images/site-dumpster-1.png",
+    "/images/site-dumpster-2.png",
+    "/images/site-dumpster-3.png",
+  ],
     description: "Heavy-duty equipment trailer for transporting machinery and materials to job sites.",
     features: [
       "Hydraulic Tilt Deck",
@@ -315,6 +360,11 @@ const equipmentData = {
     title: "D6 Bulldozer",
     category: "Dozers",
     image: "/placeholder.svg?height=500&width=700&text=D6+Bulldozer",
+       images: [
+    "/images/site-dumpster-1.png",
+    "/images/site-dumpster-2.png",
+    "/images/site-dumpster-3.png",
+  ],
     description: "Powerful bulldozer for heavy earthmoving, grading, and site preparation work.",
     features: [
       "6-Way Blade",

@@ -4,7 +4,6 @@ import { HeroHighlight, Highlight } from "../components/ui/hero-highlight";
 
 export function HeroHighlightDemo() {
   return (
-    <HeroHighlight>
         
       <motion.h1
         initial={{
@@ -26,6 +25,6 @@ export function HeroHighlightDemo() {
           a solution, of a solution, of a solution that works.
         </Highlight>
       </motion.h1>
-    </HeroHighlight>
+      
   );
 }
