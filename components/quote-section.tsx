@@ -1,15 +1,26 @@
+
 "use client"
-
 import type React from "react"
-
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 import { Phone, Mail, MapPin, Clock, CheckCircle } from "lucide-react"
+import { toast } from "sonner" // import from 'sonner' for visible toast
 
 export default function QuoteSection() {
   const [formData, setFormData] = useState({
@@ -23,14 +34,30 @@ export default function QuoteSection() {
     message: "",
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle form submission
-    console.log("Form submitted:", formData)
-  }
-
   const handleInputChange = (field: string, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }))
+  }
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    console.log("Form submitted:", formData)
+
+    toast.success("Quote request submitted successfully!", {
+      description: "We’ll get back to you within 2 hours.",
+      duration: 4000,
+    })
+
+    // Reset form
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      postcode: "",
+      equipment: "",
+      startDate: "",
+      duration: "",
+      message: "",
+    })
   }
 
   return (
@@ -52,30 +79,23 @@ export default function QuoteSection() {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <Label htmlFor="name" className="text-slate-700 font-medium">
-                        Name *
-                      </Label>
+                      <Label htmlFor="name">Name *</Label>
                       <Input
                         id="name"
-                        type="text"
                         required
                         value={formData.name}
                         onChange={(e) => handleInputChange("name", e.target.value)}
-                        className="mt-1 border-slate-300 focus:border-blue-500 focus:ring-blue-500"
                         placeholder="Your full name"
                       />
                     </div>
                     <div>
-                      <Label htmlFor="email" className="text-slate-700 font-medium">
-                        Email *
-                      </Label>
+                      <Label htmlFor="email">Email *</Label>
                       <Input
                         id="email"
                         type="email"
                         required
                         value={formData.email}
                         onChange={(e) => handleInputChange("email", e.target.value)}
-                        className="mt-1 border-slate-300 focus:border-blue-500 focus:ring-blue-500"
                         placeholder="your@email.com"
                       />
                     </div>
@@ -83,30 +103,23 @@ export default function QuoteSection() {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <Label htmlFor="phone" className="text-slate-700 font-medium">
-                        Phone *
-                      </Label>
+                      <Label htmlFor="phone">Phone *</Label>
                       <Input
                         id="phone"
                         type="tel"
                         required
                         value={formData.phone}
                         onChange={(e) => handleInputChange("phone", e.target.value)}
-                        className="mt-1 border-slate-300 focus:border-blue-500 focus:ring-blue-500"
                         placeholder="0400 000 000"
                       />
                     </div>
                     <div>
-                      <Label htmlFor="postcode" className="text-slate-700 font-medium">
-                        Postcode *
-                      </Label>
+                      <Label htmlFor="postcode">Postcode *</Label>
                       <Input
                         id="postcode"
-                        type="text"
                         required
                         value={formData.postcode}
                         onChange={(e) => handleInputChange("postcode", e.target.value)}
-                        className="mt-1 border-slate-300 focus:border-blue-500 focus:ring-blue-500"
                         placeholder="2600"
                       />
                     </div>
@@ -114,11 +127,12 @@ export default function QuoteSection() {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <Label htmlFor="equipment" className="text-slate-700 font-medium">
-                        Equipment Needed *
-                      </Label>
-                      <Select onValueChange={(value) => handleInputChange("equipment", value)}>
-                        <SelectTrigger className="mt-1 border-slate-300 focus:border-blue-500 focus:ring-blue-500">
+                      <Label htmlFor="equipment">Equipment Needed *</Label>
+                      <Select
+                        value={formData.equipment}
+                        onValueChange={(value) => handleInputChange("equipment", value)}
+                      >
+                        <SelectTrigger>
                           <SelectValue placeholder="Select equipment" />
                         </SelectTrigger>
                         <SelectContent>
@@ -132,17 +146,19 @@ export default function QuoteSection() {
                         </SelectContent>
                       </Select>
                     </div>
+
                     <div>
-                      <Label htmlFor="duration" className="text-slate-700 font-medium">
-                        Rental Duration
-                      </Label>
-                      <Select onValueChange={(value) => handleInputChange("duration", value)}>
-                        <SelectTrigger className="mt-1 border-slate-300 focus:border-blue-500 focus:ring-blue-500">
+                      <Label htmlFor="duration">Rental Duration</Label>
+                      <Select
+                        value={formData.duration}
+                        onValueChange={(value) => handleInputChange("duration", value)}
+                      >
+                        <SelectTrigger>
                           <SelectValue placeholder="Select duration" />
                         </SelectTrigger>
                         <SelectContent>
                           <SelectItem value="1-day">1 Day</SelectItem>
-                          <SelectItem value="2-3-days">2-3 Days</SelectItem>
+                          <SelectItem value="2-3-days">2–3 Days</SelectItem>
                           <SelectItem value="1-week">1 Week</SelectItem>
                           <SelectItem value="2-weeks">2 Weeks</SelectItem>
                           <SelectItem value="1-month">1 Month</SelectItem>
@@ -153,14 +169,11 @@ export default function QuoteSection() {
                   </div>
 
                   <div>
-                    <Label htmlFor="message" className="text-slate-700 font-medium">
-                      Project Details
-                    </Label>
+                    <Label htmlFor="message">Project Details</Label>
                     <Textarea
                       id="message"
                       value={formData.message}
                       onChange={(e) => handleInputChange("message", e.target.value)}
-                      className="mt-1 border-slate-300 focus:border-blue-500 focus:ring-blue-500"
                       placeholder="Tell us about your project and any specific requirements..."
                       rows={4}
                     />
@@ -177,17 +190,7 @@ export default function QuoteSection() {
             </Card>
           </div>
 
-          {/* Contact Information */}
-          <div>
-            <div className="mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Get in Touch</h2>
-              <div className="w-55 h-1 bg-secondary mb-4"></div>
-              <p className="text-slate-600 text-lg">
-                Need immediate assistance? Contact us directly for urgent equipment needs.
-              </p>
-            </div>
-
-            {/* Contact Cards */}
+           {/* Contact Cards */}
             <div className="space-y-6 mb-8">
               <Card className="border-l-4 border-l-primary shadow-lg">
                 <CardContent className="p-6">
@@ -267,8 +270,8 @@ export default function QuoteSection() {
               </CardContent>
             </Card>
           </div>
-        </div>
       </div>
     </section>
   )
 }
+

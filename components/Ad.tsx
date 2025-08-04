@@ -17,7 +17,7 @@ const Ad = () => {
       />
 
       {/* Overlayed Text Section */}
-      <div className="absolute inset-0 flex items-center md:px-4 px-6 md:px-12 lg:px-20">
+      <div className="absolute inset-0 flex items-center md:px-6 px-2 lg:px-10">
         <div className="w-full  text-left ">
           {/* Headings */}
           <div className="text-black font-bold text-3xl md:text-5xl lg:text-7xl leading-tight">
@@ -33,14 +33,14 @@ const Ad = () => {
           </p>
 
           {/* Bullet Points */}
-          <div className="mt-10 md:text-lg text-[10px] flex flex-row gap-6 s md:gap-10">
+          <div className="mt-10 md:text-lg text-[10px] flex flex-row gap-2 s md:gap-10">
             <div className="text-black flex flex-col gap-2">
               <p className="flex items-center">
-                <CheckCircle className="md:w-5 md:h-5  w-3 h-3 text-green-600 mr-1" />
+                <CheckCircle className="md:w-5 md:h-5 w-3 h-3 text-green-600 mr-1" />
                 Excavator
               </p>
               <p className="flex items-center">
-                <CheckCircle className="md:w-5 md:h-5  w-3 h-3 text-green-600 mr-1" />
+                <CheckCircle className="md:w-5 md:h-5 w-3 h-3 text-green-600 mr-1" />
                 Loader
               </p>
             </div>

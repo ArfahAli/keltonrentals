@@ -98,14 +98,14 @@ export default function EquipmentSection() {
       <div className="container mx-auto px-4 relative z-10 mb-20">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 bg-blue-100 rounded-full text-blue-700 font-semibold mb-4">
+          <div className="inline-flex items-center px-4 py-2 bg-blue-100 rounded-full text-primary font-semibold mb-4">
             <Wrench className="w-4 h-4 mr-2" />
             Equipment Rental
           </div>
 
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
             <span className="block">Looking for reliable gear to</span>
-            <span className="block text-blue-700  text-3xl md:text-4xl mt-2">get the job done?</span>
+            <span className="block text-primary  text-3xl md:text-4xl mt-2">get the job done?</span>
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
             At Kelton Rentals, we've got you covered with a wide range of top-quality equipment and attachments
@@ -141,7 +141,7 @@ export default function EquipmentSection() {
                     <Link href={`/equipment/${category.id}`}>
                       <Button
                         variant="ghost"
-                        className="w-full justify-between text-white hover:bg-blue-50 hover:text-blue-700 transition-colors"
+                        className="w-full justify-between text-white hover:bg-blue-50 hover:text-primary transition-colors"
                       >
                         View Details
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -157,28 +157,28 @@ export default function EquipmentSection() {
 
         {/* Call to Action */}
         <div className="text-center mt-20">
-          <p className="text-4xl md:text-6xl lg:text-7xl font-bold text-blue-700 mb-6 ">
+          <p className="text-4xl md:text-6xl lg:text-7xl font-bold text-primary mb-6 ">
             Let's get your project off the ground — the right way!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <Link href="#equipments" scroll={true}>
+            <Link href="#equipments" scroll={true}>
 
-            <Button
-              size="lg"
-              className="bg-blue-700 hover:bg-blue-800 text-white font-bold px-8 py-4 rounded-full shadow-lg hover:shadow-xl "
-            >
-              View Full Range
-            </Button>
-                            </Link>
-                            <Link href="#quote" scroll={true}>
+              <Button
+                size="lg"
+                className="bg-primary hover:bg-secondary text-white hover:text-black cursor-pointer font-bold px-8 py-4 rounded-full shadow-lg hover:shadow-xl "
+              >
+                View Full Range
+              </Button>
+            </Link>
+            <Link href="#quote" scroll={true}>
 
-            <Button
-              size="lg"
-              variant="outline"
-              className="hover:border-2 border-secondary text-black bg-secondary hover:text-slate-900 font-bold px-8 py-4 rounded-full hover:bg-transparent cursor-pointer"
-            >
-              Get Custom Quote
-            </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="hover:border-2 border-secondary text-black bg-secondary hover:text-slate-900 font-bold px-8 py-4 rounded-full hover:bg-transparent cursor-pointer"
+              >
+                Get Custom Quote
+              </Button>
             </Link>
           </div>
         </div>

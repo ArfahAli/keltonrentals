@@ -42,13 +42,13 @@ export default function AboutSection() {
         <div className="flex flex-col lg:flex-row items-center justify-center gap-12 mb-20">
           {/* Text Block */}
           <div className="max-w-2xl w-full">
-            <h2 className="text-2xl md:text-5xl font-bold text-blue-700 mb-4">The Excavator People</h2>
+            <h2 className="text-2xl md:text-5xl font-bold text-primary mb-4">The Excavator People</h2>
             <div className="lg:w-130 md:w-130 w-64 h-1 bg-secondary mb-8" />
 
             <div className="space-y-6 text-lg text-slate-700 leading-relaxed">
               <p>
                 At Kelton Rentals, we're proud to be a{" "}
-                <span className="font-semibold text-blue-700">family-owned and operated business</span>, and that
+                <span className="font-semibold text-primary">family-owned and operated business</span>, and that
                 personal touch is at the heart of everything we do.
               </p>
 

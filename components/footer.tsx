@@ -23,13 +23,20 @@ export default function Footer() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Company Info */}
             <div className="lg:col-span-2">
-              <div className="mb-6">
+              <div className="mb-6 flex items-center ">
                 <Image
-                  src="/images/kelton-logo.png"
+                  src="/images/Logo-1.png"
                   alt="Kelton Rentals"
                   width={200}
                   height={60}
-                  className="h-12 w-auto brightness-0 invert"
+                  className="h-12 w-auto"
+                />
+                 <Image
+                  src="/images/Logo.png"
+                  alt="Kelton Rentals"
+                  width={200}
+                  height={60}
+                  className="h-12 w-auto"
                 />
               </div>
               <p className="text-slate-300 mb-6 leading-relaxed max-w-md">
@@ -40,21 +47,21 @@ export default function Footer() {
               {/* Contact Info */}
               <div className="space-y-3">
                 <div className="flex items-center">
-                  <Phone className="w-5 h-5 text-yellow-400 mr-3" />
+                  <Phone className="w-5 h-5 text-secondary mr-3" />
                   <div>
                     <div className="text-xl font-bold">02 6213 8111</div>
                     <div className="text-sm text-slate-400">24/7 Emergency Support</div>
                   </div>
                 </div>
                 <div className="flex items-center">
-                  <Mail className="w-5 h-5 text-yellow-400 mr-3" />
+                  <Mail className="w-5 h-5 text-secondary mr-3" />
                   <div>
                     <div className="font-semibold">rentals@kelton.biz</div>
                     <div className="text-sm text-slate-400">Get your quote today</div>
                   </div>
                 </div>
                 <div className="flex items-center">
-                  <MapPin className="w-5 h-5 text-yellow-400 mr-3" />
+                  <MapPin className="w-5 h-5 text-secondary mr-3" />
                   <div>
                     <div className="font-semibold">Canberra & Surrounding Areas</div>
                     <div className="text-sm text-slate-400">Fast delivery service</div>
@@ -65,50 +72,50 @@ export default function Footer() {
 
             {/* Quick Links */}
             <div>
-              <h3 className="text-xl font-bold mb-6 text-yellow-400">Quick Links</h3>
+              <h3 className="text-xl font-bold mb-6 text-secondary">Quick Links</h3>
               <ul className="space-y-3">
                 <li>
                   <Link
                     href="/equipment"
-                    className="text-slate-300 hover:text-yellow-400 transition-colors flex items-center group"
+                    className="text-slate-300 hover:text-secondary transition-colors flex items-center group"
                   >
-                    <span className="w-0 group-hover:w-2 h-0.5 bg-yellow-400 mr-0 group-hover:mr-2 transition-all duration-300"></span>
+                    <span className="w-0 group-hover:w-2 h-0.5 bg-secondary mr-0 group-hover:mr-2 transition-all duration-300"></span>
                     Equipment Rental
                   </Link>
                 </li>
                 <li>
                   <Link
                     href="/attachments"
-                    className="text-slate-300 hover:text-yellow-400 transition-colors flex items-center group"
+                    className="text-slate-300 hover:text-secondary transition-colors flex items-center group"
                   >
-                    <span className="w-0 group-hover:w-2 h-0.5 bg-yellow-400 mr-0 group-hover:mr-2 transition-all duration-300"></span>
+                    <span className="w-0 group-hover:w-2 h-0.5 bg-secondary mr-0 group-hover:mr-2 transition-all duration-300"></span>
                     Attachment Rental
                   </Link>
                 </li>
                 <li>
                   <Link
                     href="/about"
-                    className="text-slate-300 hover:text-yellow-400 transition-colors flex items-center group"
+                    className="text-slate-300 hover:text-secondary transition-colors flex items-center group"
                   >
-                    <span className="w-0 group-hover:w-2 h-0.5 bg-yellow-400 mr-0 group-hover:mr-2 transition-all duration-300"></span>
+                    <span className="w-0 group-hover:w-2 h-0.5 bg-secondary mr-0 group-hover:mr-2 transition-all duration-300"></span>
                     About Us
                   </Link>
                 </li>
                 <li>
                   <Link
                     href="/contact"
-                    className="text-slate-300 hover:text-yellow-400 transition-colors flex items-center group"
+                    className="text-slate-300 hover:text-secondary transition-colors flex items-center group"
                   >
-                    <span className="w-0 group-hover:w-2 h-0.5 bg-yellow-400 mr-0 group-hover:mr-2 transition-all duration-300"></span>
+                    <span className="w-0 group-hover:w-2 h-0.5 bg-secondary mr-0 group-hover:mr-2 transition-all duration-300"></span>
                     Contact
                   </Link>
                 </li>
                 <li>
                   <Link
                     href="/quote"
-                    className="text-slate-300 hover:text-yellow-400 transition-colors flex items-center group"
+                    className="text-slate-300 hover:text-secondary transition-colors flex items-center group"
                   >
-                    <span className="w-0 group-hover:w-2 h-0.5 bg-yellow-400 mr-0 group-hover:mr-2 transition-all duration-300"></span>
+                    <span className="w-0 group-hover:w-2 h-0.5 bg-secondary mr-0 group-hover:mr-2 transition-all duration-300"></span>
                     Get Quote
                   </Link>
                 </li>
@@ -117,7 +124,7 @@ export default function Footer() {
 
             {/* Newsletter & Hours */}
             <div>
-              <h3 className="text-xl font-bold mb-6 text-yellow-400">Stay Connected</h3>
+              <h3 className="text-xl font-bold mb-6 text-secondary">Stay Connected</h3>
 
               {/* Newsletter */}
               <div className="mb-6">
@@ -126,9 +133,9 @@ export default function Footer() {
                   <Input
                     type="email"
                     placeholder="Your email"
-                    className="bg-slate-800 border-slate-700 text-white placeholder:text-slate-400 focus:border-yellow-400"
+                    className="bg-slate-800 border-slate-700 text-white placeholder:text-slate-400 focus:border-secondary"
                   />
-                  <Button className="bg-yellow-400 hover:bg-yellow-500 text-slate-900 font-semibold px-4">
+                  <Button className="bg-secondary hover:bg-primary hover:text-white text-slate-900 font-semibold px-4">
                     Subscribe
                   </Button>
                 </div>
@@ -137,7 +144,7 @@ export default function Footer() {
               {/* Business Hours */}
               <div className="mb-6">
                 <div className="flex items-center mb-3">
-                  <Clock className="w-5 h-5 text-yellow-400 mr-2" />
+                  <Clock className="w-5 h-5 text-secondary mr-2" />
                   <h4 className="font-semibold">Business Hours</h4>
                 </div>
                 <div className="text-sm text-slate-300 space-y-1">
@@ -162,19 +169,19 @@ export default function Footer() {
                 <div className="flex space-x-3">
                   <Link
                     href="#"
-                    className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-yellow-400 hover:text-slate-900 transition-colors"
+                    className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-secondary hover:text-slate-900 transition-colors"
                   >
                     <Facebook className="w-5 h-5" />
                   </Link>
                   <Link
                     href="#"
-                    className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-yellow-400 hover:text-slate-900 transition-colors"
+                    className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-secondary hover:text-slate-900 transition-colors"
                   >
                     <Instagram className="w-5 h-5" />
                   </Link>
                   <Link
                     href="#"
-                    className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-yellow-400 hover:text-slate-900 transition-colors"
+                    className="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-secondary hover:text-slate-900 transition-colors"
                   >
                     <Linkedin className="w-5 h-5" />
                   </Link>
@@ -191,13 +198,13 @@ export default function Footer() {
               © {new Date().getFullYear()} Kelton Rentals & Sales Pty Ltd. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm">
-              <Link href="/privacy" className="text-slate-400 hover:text-yellow-400 transition-colors">
+              <Link href="/privacy" className="text-slate-400 hover:text-secondary transition-colors">
                 Privacy Policy
               </Link>
-              <Link href="/terms" className="text-slate-400 hover:text-yellow-400 transition-colors">
+              <Link href="/terms" className="text-slate-400 hover:text-secondary transition-colors">
                 Terms of Service
               </Link>
-              <Link href="/sitemap" className="text-slate-400 hover:text-yellow-400 transition-colors">
+              <Link href="/sitemap" className="text-slate-400 hover:text-secondary transition-colors">
                 Sitemap
               </Link>
             </div>

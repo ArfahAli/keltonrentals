@@ -72,7 +72,7 @@ export default function Header() {
           {/* Contact Info & CTA */}
           <div className="hidden lg:flex items-center space-x-4">
             <div className="text-right">
-              <div className={`text-lg font-bold ${isScrolled ? "text-blue-700" : "text-white"}`}>02 6213 8111</div>
+              <div className={`text-lg font-bold ${isScrolled ? "text-primary" : "text-white"}`}>02 6213 8111</div>
               <div className={`text-sm ${isScrolled ? "text-slate-600" : "text-white/80"}`}>rentals@kelton.biz</div>
             </div>
           <Link href="#quote" scroll={true}>
@@ -128,7 +128,7 @@ export default function Header() {
                 Contact
               </Link>
               <div className="px-4 pt-4 border-t border-stone-200">
-                <div className="text-lg font-bold text-blue-700">02 6213 8111</div>
+                <div className="text-lg font-bold text-primary ">02 6213 8111</div>
                 <div className="text-sm text-slate-600 mb-3">rentals@kelton.biz</div>
                 <Link href="#quote" scroll={true}>
   <Button className="w-full bg-secondary hover:bg-primary text-slate-900 font-semibold">

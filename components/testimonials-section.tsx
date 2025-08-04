@@ -74,7 +74,7 @@ export default function TestimonialsSection() {
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">What Our Customers Say</h2>
 
           {/* Google Reviews Badge */}
-          <div className="inline-flex items-center bg-white rounded-full shadow-lg px-6 py-3 ">
+          <div className="inline-flex items-center md:flex-row bg-white rounded-full shadow-lg px-6 py-3 flex-col ">
             <div className="flex items-center mr-4">
               <span className="text-sm font-medium text-slate-600 mr-2">Google Reviews</span>
               <div className="flex items-center">

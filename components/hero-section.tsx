@@ -90,12 +90,12 @@ export default function HeroSection() {
       </div>
 
       {/* Stats */}
-      <div className="flex items-start sm:items-center gap-6 md:gap-8">
-        <div className="flex items-center">
+      <div className="flex items-start  sm:items-center gap-6 md:gap-8">
+        <div className="flex items-center md:flex-row flex-col md:gap-0 gap-4 ">
           <div className="flex -space-x-2 mr-3">
             <div className="w-8 h-8 rounded-full bg-secondary border-2 border-white flex items-center justify-center">
               <Users className="w-4 h-4 text-slate-900" />
-            </div>
+            </div> 
             <div className="w-8 h-8 rounded-full bg-secondary border-2 border-white flex items-center justify-center">
               <Clock className="w-4 h-4 text-slate-900" />
             </div>
@@ -105,7 +105,7 @@ export default function HeroSection() {
           </div>
           <div>
             <div className="text-base sm:text-lg font-bold text-secondary">500+ Happy Clients</div>
-            <div className="text-sm text-white/80">& Growing</div>
+            <div className="text-sm md:block hidden text-white/80">& Growing</div>
           </div>
         </div>
       </div>
